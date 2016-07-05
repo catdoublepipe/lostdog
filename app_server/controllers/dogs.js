@@ -1,23 +1,23 @@
 module.exports.homePage = function(req, res, next) {
   res.render('index', {
-    title: 'List of all registered lost dogs'
+    title: 'The list of all registered lost dogs'
   });
 };
 
 module.exports.dogInfo = function(req, res, next) {
   res.render('index', {
-    title: 'Dog info page'
+    title: 'The dog info page'
   });
 };
 
 module.exports.registerLostDog = function(req, res, next) {
   res.render('index', {
-    title: 'Register lost dog page'
+    title: 'Register a lost dog page'
   });
 };
 
 module.exports.foundLostDog = function(req, res, next) {
   res.render('index', {
-    title: 'Found lost dog page'
+    title: 'Found a lost dog page'
   });
 };
