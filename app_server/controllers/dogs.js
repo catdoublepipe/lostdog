@@ -1,6 +1,6 @@
 module.exports.homePage = function(req, res, next) {
   res.render('index', {
-    title: 'The list of all registered lost dogs'
+    title: 'The list of all registered lost dogs page'
   });
 };
 
