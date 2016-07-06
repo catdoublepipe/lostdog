@@ -5,7 +5,7 @@ var controllerUsers = require('../controllers/users')
 var express = require('express');
 var router = express.Router();
 
-router.get('/', controllerDogs.homePage);
+router.get('/', controllerDogs.lostDogList);
 router.get('/dog', controllerDogs.dogInfo);
 router.get('/dog/lost', controllerDogs.registerLostDog);
 router.get('/dog/found', controllerDogs.foundLostDog);

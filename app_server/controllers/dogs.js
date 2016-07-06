@@ -1,5 +1,5 @@
-module.exports.homePage = function(req, res, next) {
-  res.render('index', {
+module.exports.lostDogList = function(req, res, next) {
+  res.render('lost-dog-list', {
     title: 'The list of all registered lost dogs page'
   });
 };
