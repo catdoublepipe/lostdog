@@ -10,24 +10,33 @@ block content
     .col-xs-12.col-sm-8
       .row.list-group
         .col-xs-12.list-group-item
-          h4
-            a(href="/dog") Fido
-            i
-              small &nbsp;- missing since 30th June 2016
-          p Last seen near Glasgow's George Square, Fido is a friendly, fluffy, four year-old chow-chow who loves to play fetch.
-          p
-            span.label.label-success Friendly
-            | &nbsp;
+          .col-xs-12.col-sm-4.col-lg-3
+            img.img-responsive.img-thumbnail(src='/images/chow-chow.jpg', alt='chow-chow.jpg', style="width:125px;height:125px;overflow:hidden")
+          .col-xs-12.col-sm-8.col-lg-9    
+            h4
+              a(href="/dog") Fido
+              i
+                small &nbsp;- missing since 30th June 2016
+            p Last seen near Glasgow's George Square, Fido is a friendly, fluffy, four year-old chow-chow who loves to play fetch.
+            p
+              span.label.label-danger Aggressive!
+              | &nbsp;
         .col-xs-12.list-group-item
-          h4
-            a(href="/dog") Growlie
-            i
-              small &nbsp;- missing since 4th July 2016
-          p Last seen on Cinnabar Island, Growlie is a friendly and loyal level-13 fire Pokémon who was ruthlessly taken from his Trainer by the evil Team Rocket. 
-          p
-            span.label.label-success Friendly
-            | &nbsp;
-            span.label.label-danger Loyal
-            | &nbsp;
+          .col-xs-12.col-sm-4.col-lg-3
+            img.img-responsive.img-thumbnail(src='/images/growlie.jpg', alt='growlie.jpg', style="width:125px;height:125px;overflow:hidden")
+          .col-xs-12.col-sm-8.col-lg-9    
+            h4
+              a(href="/dog") Growlie
+              i
+                small &nbsp;- missing since 4th July 2016
+            p Last seen on Cinnabar Island, Growlie is a friendly and loyal level-13 fire Pokémon who was ruthlessly taken from his Trainer by the evil Team Rocket. 
+            p
+              span.label.label-success Friendly
+              | &nbsp;
+              span.label.label-primary Loyal
+              | &nbsp;
     .col-xs-12.col-sm-4
-     p.lead Are you an animal lover? Want to help others find their companions? fetch shows lost dogs last seen near you.
+      p.lead Are you an animal lover? Want to help others find their companions? 
+        span 
+          i fetch 
+          | &nbsp; shows lost dogs last seen near you.
