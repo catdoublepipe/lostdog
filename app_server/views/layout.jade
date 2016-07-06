@@ -24,9 +24,19 @@ html
               a(href='/about/') About us
           ul.nav.navbar-nav.navbar-right
             li
-              p.navbar-text Already have an account?
+              a(href='/users/signup/')
+                span.glyphicon.glyphicon-user
+                |  Sign Up
             li
-              a(href='/login/') Login
-    block content
+              a(href='/users/login/')
+                span.glyphicon.glyphicon-log-in
+                |  Login
+    .container
+      block content
+      
+      footer
+        .row
+          .col-xs-12
+            small &copy; William C Cheung 2016
     script(src='/javascripts/jquery-3.0.0.min.js')
-    script(src='bootstrap/js/bootstrap.min.js')
+    script(src='/bootstrap/js/bootstrap.min.js')
