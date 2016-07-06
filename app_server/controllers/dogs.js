@@ -5,7 +5,7 @@ module.exports.lostDogList = function(req, res, next) {
 };
 
 module.exports.dogInfo = function(req, res, next) {
-  res.render('index', {
+  res.render('lost-dog-info', {
     title: 'The dog info page'
   });
 };
