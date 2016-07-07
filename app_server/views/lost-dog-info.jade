@@ -3,64 +3,38 @@ extends layout
 block content 
   .row.page-header
     .col-lg-12 
-      h1 Growlie
+      h1 Fido
+        small &nbsp; missing since 30 June 2016
   .row
+    .col-xs-12
+      p Last seen near Glasgow's George Square, Fido is a friendly, fluffy, four year-old chow-chow who loves to play fetch.
     .col-xs-12.col-md-9
-      .row 
-        .col-xs-12.col-sm-6
-          p.rating 
-            span.glyphicon.glyphicon-star 
-            span.glyphicon.glyphicon-star 
-            span.glyphicon.glyphicon-star 
-            span.glyphicon.glyphicon-star-empty 
-            span.glyphicon.glyphicon-star-empty    
-          p Paragraph 1
-          .panel.panel-primary
-            .panel-heading
-              h2.panel-title Panel heading 1
-            .panel-body
-              p Panel body paragraph 1
-              p Panel body paragraph 2
-              p Panel body paragraph 3
-          .panel.panel-primary 
-            .panel-heading
-              h2.panel-title Panel heading 2
-            .panel-body
-              span.label.label-warning 
-              span.glyphicon.glyphicon-ok 
-              | &nbsp;Label 1
-              | &nbsp; 
-              span.label.label-warning
-              span.glyphicon.glyphicon-ok
-              | &nbsp;Label 2
-              | &nbsp; 
-              span.label.label-warning
-              span.glyphicon.glyphicon-ok
-              | &nbsp;Label 3
-              | &nbsp;
-        .col-xs-12.col-sm-6.location-map 
-          .panel.panel-info
-            .panel-heading
-              h2.panel-title Lost dog poster
-              .panel-body 
-                img.img-responsive.img-thumbnail(src='/images/growlie.jpg')
       .row
         .col-xs-12
-          .panel.panel-primary.review-panel
+          center
+            img.img-responsive.img-thumbnail(src='/images/chow-chow.jpg')
+      .row
+        .col-xs-12
+          br
+      .row
+        .col-xs-12
+          .panel.panel-inverse.comment-panel
             .panel-heading 
               a.btn.btn-default.pull-right(href='#') Add comment
               h2.panel-title Comments 
-            .panel-body.review-container
+            .panel-body.comment-container
               .row 
-                .review
-                  .well.well-sm.review-header 
-                    span.rating
-                      span.glyphicon.glyphicon-star 
-                      span.glyphicon.glyphicon-star 
-                      span.glyphicon.glyphicon-star 
-                      span.glyphicon.glyphicon-star 
-                      span.glyphicon.glyphicon-star
-                    span.reviewAuthor Gary Oak
-                    small.reviewTimestamp 16 July 2013 
+                .comment
+                  .well.well-sm.comment-header 
+                    span.commentAuthor Gary Oak
+                    small.commentTimestamp 16 July 2013 
+                  .col-xs-12
+                    p I saw one just like this so I caught it with a pokeball. He has since evolved to an Arcanine!
+            .panel-body.comment-container
+              .row 
+                .comment
+                  .well.well-sm.comment-header 
+                    span.commentAuthor Gary Oak
+                    small.commentTimestamp 16 July 2013 
                   .col-xs-12
                     p I saw one just like this so I caught it with a pokeball. He has since evolved to an Arcanine!
