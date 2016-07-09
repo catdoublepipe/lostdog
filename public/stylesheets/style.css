@@ -1,7 +1,21 @@
 body {
-  padding: 50px;
+    padding: 50px;
 }
-
 .label-as-badge {
     border-radius: 1em;
+}
+.comment {
+    padding-bottom: 5px;
+}
+.panel-body.comment-container {
+    padding-top: 0;
+}
+.comment-header {
+    margin-bottom: 10px;
+}
+.commentAuthor {
+    margin: 0 5px;
+}
+.commentTimestamp {
+    color: #ccc;
 }
