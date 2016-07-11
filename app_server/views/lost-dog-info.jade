@@ -7,10 +7,10 @@ block content
         small &nbsp; missing since 4 July 2016
   .row
     .col-xs-12.col-md-8
-      .row.grid-divider
-        .col-xs-12.col-sm-7
-          a(href='/images/growlie.jpg')
-            img.img-responsive.img-rounded(src='/images/growlie.jpg')
+      .row
+        .col-xs-12.col-sm-7        
+          a(title='Image 1', href='#')
+            img#image-1.img-responsive.thumbnail(src='/images/growlie1.jpg')
         .col-xs-12.col-sm-5
           dl
             dt Name
@@ -32,6 +32,28 @@ block content
             dt Description of dog
             dd 
               p(align='justify') A level-13 pokémon very loyal to his trainer, Growlie will bark fiercely at anything invading our territory. Growlie has a superb sense of smell. Once he smells anything, he won’t forget the scent, no matter what! He can even use his advanced olfactory sense to determine the emotions of other living things.
+      #img-repo.hidden
+        #image-1.item
+          img.thumbnail.img-responsive(title='Growlie 1', src='/images/growlie1.jpg', align='middle')
+        #image-1.item
+          img.thumbnail.img-responsive(title='Growlie 2', src='/images/growlie2.jpg')
+        #image-1.item
+          img.thumbnail.img-responsive(title='Growlie 3', src='/images/growlie3.jpg')
+      #modal-gallery.modal.fade(role='dialog')
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal') ×
+              h4.modal-title
+            .modal-body
+              #modal-carousel.carousel
+                .carousel-inner
+                a.carousel-control.left(href='#modal-carousel', data-slide='prev')
+                  i.glyphicon.glyphicon-chevron-left
+                a.carousel-control.right(href='#modal-carousel', data-slide='next')
+                  i.glyphicon.glyphicon-chevron-right
+            .modal-footer
+              button.btn.btn-default(data-dismiss='modal') Close
       .row
         .col-xs-12
           .panel.panel-inverse.comment-panel
