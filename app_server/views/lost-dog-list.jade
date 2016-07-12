@@ -4,41 +4,27 @@ block content
   #banner.page-header
     .row
       .col-lg-6
-         h1 fetch
-          small &nbsp; Helping find lost dogs near you.
+         h1= pageHeader.title
+          small &nbsp; #{pageHeader.strapline}
   .row
     .col-xs-12.col-sm-9
       .row.list-group
-        .col-xs-12.list-group-item
-          .col-xs-12.col-sm-6.col-lg-4
-            a(href="/dog")
-              img.img-responsive.img-thumbnail.center-block(src='/images/chow-chow.jpg', alt='chow-chow.jpg', width='500px', height='500px', style="overflow:hidden")
-          .col-xs-12.col-sm-6.col-lg-8    
-            h4
-              a(href="/dog") Fido
-              i
-                small &nbsp; missing since 30th June 2016
-              span.label.pull-right.label-info.label-as-badge 930m
-            p Last seen near Glasgow's George Square, Fido is a friendly, fluffy, four year-old chow-chow who loves to play fetch.
-            p
-              span.label.label-danger Aggressive!
-              | &nbsp;
-        .col-xs-12.list-group-item
-          .col-xs-12.col-sm-6.col-lg-4
-            a(href='/dog')
-              img.img-responsive.img-thumbnail.center-block(src='/images/growlie1.jpg', alt='growlie.jpg', width='500px', height='500px', style="overflow:hidden")
-          .col-xs-12.col-sm-6.col-lg-8
-            h4
-              a(href="/dog") Growlie
-              i
-                small &nbsp; missing since 4th July 2016
-                span.label.pull-right.label-info.label-as-badge 6.31km
-            p Last seen on Cinnabar Island, Growlie is a friendly and loyal level-13 fire Pokémon who was ruthlessly taken from his Trainer by the evil Team Rocket. 
-            p
-              span.label.label-success Friendly
-              | &nbsp;
-              span.label.label-primary Loyal
-              | &nbsp;
+        each dog in dogs  
+          .col-xs-12.list-group-item
+            .col-xs-12.col-sm-6.col-lg-4
+              a(href="/dog")
+                img.img-responsive.img-thumbnail.center-block(src=dog.image)
+            .col-xs-12.col-sm-6.col-lg-8    
+              h4
+                a(href="/dog")= dog.name
+                i
+                  small &nbsp; missing since #{dog.lastSeenDate}
+                span.label.pull-right.label-info.label-as-badge= dog.lastSeenDistance
+              p= dog.summaryText
+              p
+                each tag in dog.tags
+                  span.label.label-danger= tag
+                  | &nbsp;
     .col-xs-12.col-sm-3
       p.lead Are you an animal lover? 
         br
