@@ -19,11 +19,11 @@ block content
                 a(href="/dog")= dog.name
                 i
                   small &nbsp; missing since #{dog.lastSeenDate}
-                span.label.pull-right.label-info.label-as-badge= dog.lastSeenDistance
+                span.label.pull-right.label-primary.label-as-badge= dog.lastSeenDistance
               p= dog.summaryText
               p
                 each tag in dog.tags
-                  span.label.label-danger= tag
+                  span.label.label-info= tag
                   | &nbsp;
     .col-xs-12.col-sm-3
       p.lead Are you an animal lover? 
