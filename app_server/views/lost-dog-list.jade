@@ -16,7 +16,7 @@ block content
                 img.img-responsive.img-thumbnail.center-block(src=dog.image)
             .col-xs-12.col-sm-6.col-lg-8    
               h4
-                a(href="/dog", data-toggle='tooltip', data-placement='bottom', title='', data-original-title='Click to show dog info', data-animation='true')= dog.name
+                a(href="/dog")= dog.name
                 i
                   small &nbsp; missing since #{dog.lastSeenDate}
                 span.label.pull-right.label-primary.label-as-badge= dog.lastSeenDistance
