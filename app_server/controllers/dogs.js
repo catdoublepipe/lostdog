@@ -1,8 +1,8 @@
 module.exports.lostDogList = function(req, res, next) {
   res.render('lost-dog-list', {
-    title: 'Ida - find lost dogs near you',
+    title: 'fetch - find lost dogs near you',
     pageHeader: {
-      title: 'Ida',
+      title: 'fetch',
       strapline: 'Helping find lost dogs near you.'
     },
     dogs: [{
