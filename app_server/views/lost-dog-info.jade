@@ -3,43 +3,42 @@ extends layout
 block content 
   .row.page-header
     .col-lg-12 
-      h1 Growlie
-        small &nbsp; missing since 4 July 2016
+      h1= pageHeader.title
+        small &nbsp; #{pageHeader.strapline}
   .row
     .col-xs-12.col-md-8
       .row
         .col-xs-12.col-sm-7        
           a(title='Image 1', href='#')
-            img#dog-images.img-responsive.thumbnail.center-block(src='/images/growlie1.jpg', data-toggle='tooltip', data-placement='top', title='', data-original-title='Click to view more pictures.', data-animation='true')
+            img#dog-images.img-responsive.thumbnail.center-block(src='/images/growlie1.jpg', data-toggle='tooltip', data-placement='bottom', title='', data-original-title='Click to view all pictures.', data-animation='true')
         .col-xs-12.col-sm-5
           dl
             dt Name
-            dd Growlie
+            dd= dogInfo.name
           dl
             dt Breed
-            dd Fire-type
+            dd= dogInfo.breed
           dl
             dt Age
-            dd 5
+            dd= dogInfo.age
           dl
             dt Last seen date
-            dd 4 July 2016
+            dd= dogInfo.lastSeenDate
           dl
             dt Last seen location
-            dd Cinnabar Island, Kanto region.
+            dd= dogInfo.lastSeenLocation
           dl
             dt Tags
             dd
-            span.label.label-success Friendly
-            | &nbsp;
-            span.label.label-primary Loyal
-            | &nbsp;
+            each tag in dogInfo.tags
+              span.label.label-success= tag
+              | &nbsp;
         .col-xs-12
           br
           dl
             dt Description of dog
-            dd 
-              p(align='justify') A level-13 pokémon very loyal to his trainer, Growlie will bark fiercely at anything invading our territory. Growlie has a superb sense of smell. Once he smells anything, he won’t forget the scent, no matter what! He can even use his advanced olfactory sense to determine the emotions of other living things.
+            dd
+              p(align='justify')= dogInfo.dogDescription
       #img-repo.hidden
         #dog-images.item
           img.thumbnail.img-responsive.center-block(title='Growlie 1', src='/images/growlie1.jpg')
@@ -66,23 +65,15 @@ block content
         .col-xs-12
           .panel.panel-inverse.comment-panel
             .panel-heading 
-              a.btn.btn-default.pull-right(href='#') Add comment
+              a.btn.btn-primary.pull-right(href='#') Add comment
               h2.panel-title Comments 
-            .panel-body.comment-container
-              .row 
-                .comment
-                  .well.well-sm.comment-header 
-                    span.commentAuthor 
-                      a(href='') Gary Oak
-                    small.commentTimestamp 16 July 2013 
-                  .col-xs-12
-                    p I saw one just like this so I caught it with a pokeball. He has since evolved to an Arcanine!
-            .panel-body.comment-container
-              .row 
-                .comment
-                  .well.well-sm.comment-header 
-                    span.commentAuthor 
-                      a(href='') Officer Jenny
-                    small.commentTimestamp 20 July 2013 
-                  .col-xs-12
-                    p How dare Team Rocket take an Officer Jenny's Growlithe! We will get them for this!
+            each comment in comments
+              .panel-body.comment-container
+                .row 
+                  .comment
+                    .well.well-sm.comment-header 
+                      span.commentAuthor 
+                        a(href='#')= comment.author
+                      small.commentTimestamp= comment.timestamp
+                    .col-xs-12
+                      p= comment.comment

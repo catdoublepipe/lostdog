@@ -25,7 +25,29 @@ module.exports.lostDogList = function(req, res, next) {
 
 module.exports.dogInfo = function(req, res, next) {
   res.render('lost-dog-info', {
-    title: 'Growlie'
+    title: 'fetch - Growlie information',
+    pageHeader: {
+      title: 'Growlie',
+      strapline: 'last seen 6.31km away'
+    },
+    dogInfo: {
+      age: 5,
+      breed: 'Fire-type',
+      dogDescription: 'A level-13 pokémon very loyal to his trainer, Growlie will bark fiercely at anything invading our territory. Growlie has a superb sense of smell. Once he smells anything, he won’t forget the scent, no matter what! He can even use his advanced olfactory sense to determine the emotions of other living things.',
+      lastSeenDate: '4th July 2016',
+      lastSeenLocation: 'Cinnabar Island, Kanto region',
+      name: 'Growlie',
+      tags: ['Friendly', 'Loyal']
+    },
+    comments: [{
+      author: 'Gary Oak',
+      timestamp: '16th July 2016 10:12:39',
+      comment: 'I saw one just like this so I caught it with a pokeball. He has since evolved to an Arcanine!'
+    }, {
+      author: 'Officer Jenny',
+      timestamp: '20th July 2016 14:59:51',
+      comment: 'How dare Team Rocket take an Officer Jenny\'s Growlithe! We will get them for this!'
+    }]
   });
 };
 
