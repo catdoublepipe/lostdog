@@ -8,6 +8,9 @@ var bodyParser = require('body-parser');
 var routes = require('./app_server/routes/index');
 var users = require('./app_server/routes/users');
 
+// require db - it does not export any functions so no need to assign to var.
+require('./app_server/models/db');
+
 var app = express();
 
 // view engine setup
