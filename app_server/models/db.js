@@ -1,6 +1,10 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
+const dogSchema = require('./schemata/dogSchema')
 
-var dbUri = 'mongodb://localhost/fetch';
+/*
+ * Create mongoose connection
+ */
+const dbUri = 'mongodb://localhost/fetch';
 mongoose.connect(dbUri);
 
 mongoose.connection.on('connected', function() {
@@ -15,6 +19,14 @@ mongoose.connection.on('disconnected', function() {
   console.log('Mongoose disconnected');
 });
 
+/*
+ * Create mongoose model
+ */
+mongoose.model('Dog', dogSchema, 'dog');
+
+/*
+ * Graceful shutdown
+ */
 var gracefulShutdown = function(msg, callback) {
   mongoose.connection.close(function() {
     console.log('Mongoose disconnnected through ' + msg);

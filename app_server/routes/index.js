@@ -1,18 +1,18 @@
-var controllerDogs = require('../controllers/dogs');
-var controllerAbout = require('../controllers/about');
-var controllerUsers = require('../controllers/users')
+const dogController = require('../controllers/dogController');
+const aboutController = require('../controllers/aboutController');
+const userController = require('../controllers/userController')
 
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-router.get('/', controllerDogs.lostDogList);
-router.get('/dog', controllerDogs.dogInfo);
-router.get('/dog/lost', controllerDogs.registerLostDog);
-router.get('/dog/found', controllerDogs.foundLostDog);
+router.get('/', dogController.getLostDogList);
+router.get('/dog', dogController.getLostDog);
+router.get('/dog/lost', dogController.registerLostDog);
+router.get('/dog/found', dogController.registerFoundDog);
 
-router.get('/about', controllerAbout);
+router.get('/about', aboutController);
 
-router.get('/users/signup', controllerUsers.signUp);
-router.get('/users/login', controllerUsers.logIn);
+router.get('/user/signup', userController.signUp);
+router.get('/user/login', userController.logIn);
 
 module.exports = router;

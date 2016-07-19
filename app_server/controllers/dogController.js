@@ -1,4 +1,4 @@
-module.exports.lostDogList = function(req, res, next) {
+module.exports.getLostDogList = function(req, res, next) {
   res.render('lost-dog-list', {
     title: 'fetch - find lost dogs near you',
     pageHeader: {
@@ -23,7 +23,7 @@ module.exports.lostDogList = function(req, res, next) {
   });
 };
 
-module.exports.dogInfo = function(req, res, next) {
+module.exports.getLostDog = function(req, res, next) {
   res.render('lost-dog-info', {
     title: 'fetch - Growlie information',
     pageHeader: {
@@ -57,7 +57,7 @@ module.exports.registerLostDog = function(req, res, next) {
   });
 };
 
-module.exports.foundLostDog = function(req, res, next) {
+module.exports.registerFoundDog = function(req, res, next) {
   res.render('index', {
     title: 'Found a lost dog page'
   });
