@@ -5,7 +5,8 @@ const dogSchema = {
   age: {
     type: Number,
     required: true,
-    min: 0
+    min: 0,
+    max: 50
   },
   breed: {
     type: String,

@@ -2,13 +2,16 @@ const mongoose = require('mongoose');
 
 const commentSchema = {
   author: {
-    type: String
+    type: String,
+    required: true
   },
   comment: {
-    type: String
+    type: String,
+    required: true
   },
   timestamp: {
     type: Date,
-    "default": Date.now
+    "default": Date.now,
+    required: true
   }
 };

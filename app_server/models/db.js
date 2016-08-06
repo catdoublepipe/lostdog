@@ -4,7 +4,7 @@ const dogSchema = require('./schemata/dogSchema')
 /*
  * Create mongoose connection
  */
-const dbUri = 'mongodb://localhost/fetch';
+const dbUri = process.env.MONGODB_URI ;//= 'mongodb://localhost/fetch';
 mongoose.connect(dbUri);
 
 mongoose.connection.on('connected', function() {
