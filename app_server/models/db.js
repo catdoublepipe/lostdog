@@ -4,7 +4,7 @@ const dogSchema = require('./schemata/dogSchema')
 /*
  * Create mongoose connection
  */
-const dbUri = process.env.MONGODB_URI ;//= 'mongodb://localhost/fetch';
+const dbUri = process.env.MONGODB_URI;
 mongoose.connect(dbUri);
 
 mongoose.connection.on('connected', function() {
@@ -27,7 +27,7 @@ mongoose.model('Dog', dogSchema, 'dog');
 /*
  * Graceful shutdown
  */
-var gracefulShutdown = function(msg, callback) {
+let gracefulShutdown = function(msg, callback) {
   mongoose.connection.close(function() {
     console.log('Mongoose disconnnected through ' + msg);
     callback();
