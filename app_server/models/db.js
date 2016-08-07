@@ -27,7 +27,7 @@ mongoose.model('Dog', dogSchema, 'dog');
 /*
  * Graceful shutdown
  */
-let gracefulShutdown = function(msg, callback) {
+const gracefulShutdown = function(msg, callback) {
   mongoose.connection.close(function() {
     console.log('Mongoose disconnnected through ' + msg);
     callback();
