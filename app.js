@@ -4,17 +4,21 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+
+/*
+ * DB (must be before routes)
+ */
+require('./app_api/models/db');
+
+/*
+ * routes/index.js
+ */
 const routesServer = require('./app_server/routes/index');
 const routesApi = require('./app_api/routes/index');
 const users = require('./app_server/routes/users');
 
-/*
- * DB model
- * Does not export any functions so no need to assign to var.
- */
-require('./app_server/models/db');
-
 const app = express();
+app.disable('x-powered-by');
 
 /*
  * Views engine set-up
@@ -26,10 +30,15 @@ app.set('view engine', 'jade');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/*
+ * Routing
+ */
 app.use('/', routesServer);
 app.use('/api', routesApi);
 app.use('/users', users);
@@ -64,6 +73,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
